@@ -1,0 +1,541 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --yellow: #ffd43b;
+  --orange: #ff851b;
+  --green: #168447;
+  --pink: #ff4f87;
+  --turquoise: #21b8ad;
+  --cream: #fff8df;
+  --dark: #56351d;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Baloo 2", sans-serif;
+
+  background:
+    radial-gradient(circle at 10% 10%, #fff2a8, transparent 30%),
+    radial-gradient(circle at 90% 20%, #ffc3d5, transparent 30%),
+    radial-gradient(circle at 50% 100%, #a9edc0, transparent 35%),
+    linear-gradient(135deg, #ffcf48, #ff9b42, #ff80a8);
+
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 35px 15px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.screen {
+  width: 100%;
+  max-width: 760px;
+  display: none;
+  animation: screenAppear 0.6s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes screenAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.content-card {
+  width: 100%;
+  padding: 40px 28px;
+  text-align: center;
+
+  border: 5px solid var(--yellow);
+  border-radius: 35px;
+
+  background: rgba(255, 250, 229, 0.96);
+
+  box-shadow: 0 15px 45px rgba(105, 48, 14, 0.22);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: "🌼";
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 30px;
+}
+
+.content-card::after {
+  content: "🌺";
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 30px;
+  pointer-events: none;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 6vw, 52px);
+  color: #d94b28;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: var(--green);
+  font-size: clamp(23px, 4vw, 32px);
+  margin: 18px 0;
+}
+
+.small-heading {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 15px auto;
+  max-width: 550px;
+  color: #68462e;
+}
+
+.mehndi-border {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 18px;
+  letter-spacing: 8px;
+}
+
+.flower-decoration {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #168447, #22b875);
+  color: white;
+  border: 3px solid #ffcf48;
+}
+
+.no-btn {
+  background: var(--pink);
+  color: white;
+  border: 3px solid white;
+  position: relative;
+}
+
+.big-emoji {
+  font-size: 55px;
+  margin-bottom: 12px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.colourful-text {
+  color: #e85c26;
+}
+
+.name-card {
+  padding-top: 45px;
+}
+
+.featured-name {
+  max-width: 350px;
+  margin: 25px auto;
+  padding: 20px;
+
+  border: 4px solid #ffbf00;
+  border-radius: 28px;
+
+  position: relative;
+
+  box-shadow: 0 8px 25px rgba(128, 75, 0, 0.18);
+
+  animation: featuredGlow 2s infinite alternate;
+}
+
+.bride-feature {
+  background: linear-gradient(135deg, #ffcfdb, #fff1a8);
+}
+
+.groom-feature {
+  background: linear-gradient(135deg, #b7f2c9, #fff1a8);
+}
+
+.featured-name h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 65px);
+  font-weight: 800;
+  color: #d83e48;
+  letter-spacing: 7px;
+  margin: 5px 0;
+}
+
+.groom-feature h2 {
+  color: #087b4a;
+}
+
+.crown {
+  font-size: 32px;
+}
+
+.name-caption {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #805027;
+}
+
+@keyframes featuredGlow {
+  from {
+    transform: scale(1);
+    box-shadow: 0 5px 15px rgba(255, 177, 0, 0.2);
+  }
+
+  to {
+    transform: scale(1.035);
+    box-shadow: 0 8px 28px rgba(255, 135, 0, 0.45);
+  }
+}
+
+.name-instruction {
+  color: #d94b28;
+  font-weight: 800;
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.name-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  max-width: 650px;
+  margin: 20px auto;
+  min-height: 120px;
+}
+
+.name-option {
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 8px 17px;
+
+  color: white;
+  background: #ff8b35;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+
+  animation: namePop 0.5s both;
+  transition: 0.2s;
+}
+
+.name-option:nth-child(4n) {
+  background: #168447;
+}
+
+.name-option:nth-child(4n + 1) {
+  background: #f04f87;
+}
+
+.name-option:nth-child(4n + 2) {
+  background: #1aafa7;
+}
+
+.name-option:nth-child(4n + 3) {
+  background: #e5a500;
+}
+
+.name-option:hover {
+  transform: scale(1.15) rotate(-3deg);
+}
+
+.name-option:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+@keyframes namePop {
+  from {
+    opacity: 0;
+    transform: scale(0.2) translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.feedback {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--green);
+  min-height: 30px;
+}
+
+/* Wedding card picture */
+
+.wedding-card-frame {
+  max-width: 440px;
+  margin: 25px auto;
+  padding: 12px;
+
+  border-radius: 25px;
+
+  background: linear-gradient(
+    135deg,
+    #ffcf48,
+    #ff6e9b,
+    #20a86c
+  );
+
+  box-shadow: 0 10px 30px rgba(100, 54, 12, 0.25);
+}
+
+.wedding-card-image {
+  display: block;
+  width: 100%;
+  max-height: 650px;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+  background: white;
+}
+
+.card-note {
+  font-weight: 700;
+}
+
+/* Invitation */
+
+.invitation-box {
+  background: linear-gradient(135deg, #fff0a5, #ffcfdb);
+  border: 3px dashed var(--orange);
+  border-radius: 22px;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 500px;
+}
+
+.invitation-box p {
+  font-size: 18px;
+  margin: 8px;
+}
+
+.event-date {
+  color: #d94b28;
+  font-size: 25px !important;
+  font-weight: 800;
+}
+
+/* Decorations */
+
+.decor {
+  position: fixed;
+  z-index: 1;
+  font-size: 45px;
+  pointer-events: none;
+  animation: floatDecor 5s ease-in-out infinite;
+}
+
+.decor-one {
+  top: 5%;
+  left: 4%;
+}
+
+.decor-two {
+  top: 15%;
+  right: 5%;
+  animation-delay: 1s;
+}
+
+.decor-three {
+  bottom: 10%;
+  left: 7%;
+  animation-delay: 2s;
+}
+
+.decor-four {
+  bottom: 7%;
+  right: 6%;
+  animation-delay: 1.5s;
+}
+
+@keyframes floatDecor {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-22px) rotate(15deg);
+  }
+}
+
+.floating-item {
+  position: fixed;
+  bottom: -50px;
+  font-size: 25px;
+  pointer-events: none;
+  z-index: 5;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-110vh) rotate(360deg);
+  }
+}
+
+.thankyou-message {
+  position: fixed;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+
+  background: #ffcf48;
+  color: #a92c47;
+
+  padding: 13px 25px;
+  border: 3px solid white;
+  border-radius: 30px;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+  animation: thankPop 1.2s forwards;
+  pointer-events: none;
+}
+
+@keyframes thankPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2) rotate(-10deg);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.8);
+  }
+}
+
+@media (max-width: 600px) {
+  .content-card {
+    padding: 35px 16px;
+    border-radius: 25px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+
+  .name-option {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .decor {
+    font-size: 28px;
+  }
+
+  .mehndi-border {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+}
